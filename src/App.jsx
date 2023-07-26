@@ -6,6 +6,7 @@ import RenderModal from './components/RenderModal'
 import TestErrorProtected from './components/Test'
 import { SomeContext } from './helpers/someContext'
 import RenderContextData from './components/RenderContextData'
+import UseReducer from './components/Hooks/useReducer'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -25,13 +26,7 @@ function App() {
         <button onClick={() => setCount((count) => count + 1)}>
           count is {count}
         </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
 
       {/* React refresher */}
 
@@ -42,6 +37,10 @@ function App() {
       <SomeContext.Provider value={[count, setCount]}>
         <RenderContextData />
       </SomeContext.Provider>
+
+      {/* - Hooks */}
+
+      <UseReducer />
     </>
   )
 }
