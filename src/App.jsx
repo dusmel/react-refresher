@@ -4,6 +4,8 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import RenderModal from './components/RenderModal'
 import TestErrorProtected from './components/Test'
+import { SomeContext } from './helpers/someContext'
+import RenderContextData from './components/RenderContextData'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -36,6 +38,10 @@ function App() {
       <TestErrorProtected shouldThrowError  />
 
       <RenderModal />
+
+      <SomeContext.Provider value={[count, setCount]}>
+        <RenderContextData />
+      </SomeContext.Provider>
     </>
   )
 }
