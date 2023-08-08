@@ -7,6 +7,7 @@ import TestErrorProtected from './components/Test'
 import { SomeContext } from './helpers/someContext'
 import RenderContextData from './components/RenderContextData'
 import UseReducer from './components/Hooks/useReducer'
+import UseMemo from './components/Hooks/useMemo'
 
 function App() {
   const [count, setCount] = useState(0)
@@ -41,6 +42,7 @@ function App() {
       {/* - Hooks */}
 
       <UseReducer />
+      <UseMemo />
     </>
   )
 }
