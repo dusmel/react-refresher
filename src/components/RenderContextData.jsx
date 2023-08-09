@@ -2,11 +2,17 @@ import { useContext } from "react";
 import { SomeContext } from "../helpers/someContext";
 
 const RenderContextData = () => {
-  const [count] = useContext(SomeContext);
+  //  dispatch is just a name but the idea is a function to mutate the context data
+  const [count, dispatch] = useContext(SomeContext);
+
+  const changeCount = () => {
+    const random = Math.ceil(Math.random() * 10);
+    dispatch(random);
+  };
   return (
     <div>
-      <br />
-      count from context is: {count}
+      <p> count from context is: {count}</p>
+      <button onClick={changeCount}>change count</button>
     </div>
   );
 };

@@ -25,7 +25,6 @@ const UseReducer = () => {
 
   return (
     <div>
-      <br />
       <input type="text" onChange={handleChange} defaultValue={state.names} />
       <br  />
       <br  />

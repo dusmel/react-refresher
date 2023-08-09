@@ -5,7 +5,7 @@ import factorialOf from "../../helpers/factorialOf";
 /**
  * @summary implement a simple memoization by calculatin factorial of a given number and to prove that the function wasnt called if dependencies didnt change you can play with Re-render button by either changing some random state or give number a value and click twice
  * @author Hadad
-*/
+ */
 const UseMemo = () => {
   const [number, setNumber] = useState(1);
   const [_, setInc] = useState(0);
@@ -18,10 +18,11 @@ const UseMemo = () => {
   const onClick = () => setInc((i) => i + 1);
 
   return (
-    <div>
-      Factorial of
-      <input value={number} onChange={onChange} />
+    <div className={_}>
+      Factorial of{"  "}
+      <input value={number} onChange={onChange} /> {"  "}
       is {factorial}
+      <br />
       <button onClick={onClick}>Re-render</button>
     </div>
   );
