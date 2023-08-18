@@ -1,4 +1,5 @@
 import { useReducer } from "react";
+import Button from "../Button";
 
 const initialValue = { names: "John Doe", age: 0 };
 
@@ -28,7 +29,7 @@ const UseReducer = () => {
       <input type="text" onChange={handleChange} defaultValue={state.names} />
       <br  />
       <br  />
-      <button onClick={changeAge}>change random age</button>
+      <Button onClick={changeAge}>change random age</Button>
       <br />
       Hello your name is {state.names} and age: {state.age}
     </div>

@@ -1,5 +1,6 @@
 import { useState, useMemo } from "react";
 import factorialOf from "../../helpers/factorialOf";
+import Button from "../Button";
 
 // @ts-check
 /**
@@ -23,7 +24,7 @@ const UseMemo = () => {
       <input value={number} onChange={onChange} /> {"  "}
       is {factorial}
       <br />
-      <button onClick={onClick}>Re-render</button>
+      <Button onClick={onClick}>Re-render</Button>
     </div>
   );
 };

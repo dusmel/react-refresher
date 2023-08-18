@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { SomeContext } from "../helpers/someContext";
+import Button from "./Button";
 
 const RenderContextData = () => {
   //  dispatch is just a name but the idea is a function to mutate the context data
@@ -12,7 +13,7 @@ const RenderContextData = () => {
   return (
     <div>
       <p> count from context is: {count}</p>
-      <button onClick={changeCount}>change count</button>
+      <Button onClick={changeCount}>Change count</Button>
     </div>
   );
 };
