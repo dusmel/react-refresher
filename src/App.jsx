@@ -6,13 +6,16 @@ import { Link, Outlet, useLocation } from "react-router-dom";
 import generalTopics from "./routes/generalTopics";
 import hooksTopics from "./routes/hooksTopics";
 import IconFolder from "./components/Icons/IconFolder";
+import advancedPerformance from "./routes/advancedPerformance";
 
 function App({ errorFallback }) {
   const { pathname } = useLocation();
 
+  console.log(pathname)
+
   const topic = useMemo(
     () =>
-      [...generalTopics, ...hooksTopics].find(
+      [...generalTopics, ...hooksTopics, ...advancedPerformance].find(
         (topic) => topic.path === pathname,
       ),
     [pathname],
@@ -39,7 +42,7 @@ function App({ errorFallback }) {
               {generalTopics.map((topic) => (
                 <li className="mb-1 ml-2" key={topic.path}>
                   <Link
-                    className="flex gap-2 text-slate-600 dark:text-slate-200"
+                    className="flex gap-2 text-slate-600 dark:text-slate-200 hover:text-cyan-500"
                     to={topic.path}
                   >
                     <IconFolder />
@@ -54,7 +57,23 @@ function App({ errorFallback }) {
               {hooksTopics.map((topic) => (
                 <li className="ml-2" key={topic.path}>
                   <Link
-                    className="flex gap-2 text-slate-600 dark:text-slate-200"
+                    className="flex gap-2 text-slate-600 dark:text-slate-200 hover:text-cyan-500"
+                    to={topic.path}
+                  >
+                    <IconFolder />
+                    {topic.linkLabel}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+
+            <h3 className="mt-3 font-bold">Advanced React Perf</h3>
+            <ul className="space-y-1">
+              {advancedPerformance.map((topic) => (
+                <li className="ml-2" key={topic.path}>
+                  <Link
+                    className="flex gap-2 text-slate-600 dark:text-slate-200 hover:text-cyan-500"
                     to={topic.path}
                   >
                     <IconFolder />

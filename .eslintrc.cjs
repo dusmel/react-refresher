@@ -8,7 +8,7 @@ module.exports = {
     'plugin:react-hooks/recommended',
     "prettier",
   ],
-  ignorePatterns: ['dist', '.eslintrc.cjs', 'prettier.config.js'],
+  ignorePatterns: ['dist', '.eslintrc.cjs', 'prettier.config.js', 'tailwind.config.js'],
   parserOptions: { ecmaVersion: 'latest', sourceType: 'module' },
   settings: { react: { version: '18.2' } },
   plugins: ['react-refresh'],

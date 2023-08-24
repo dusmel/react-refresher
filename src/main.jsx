@@ -15,6 +15,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <App />,
+    // lazy: () => import("./App.jsx"),
     errorElement: <App errorFallback={<ErrorPage />} />,
     children: [
       {
@@ -27,26 +28,35 @@ const router = createBrowserRouter([
       },
       {
         path: "context",
-        element:  <ContextWrapper />,
+        element: <ContextWrapper />,
       },
       {
         path: "use-reducer",
-        element:  <UseReducer />,
+        element: <UseReducer />,
       },
       {
         path: "use-memo",
-        element:  <UseMemo />,
+        element: <UseMemo />,
       },
       {
         path: "use-callback",
-        element:  <UseCallback />,
+        element: <UseCallback />,
+      },
+      {
+        path: "code-splitting",
+        lazy: () => import("./components/CodeSplitting.jsx"),
       },
     ],
   },
 ]);
 
+// let router = createStaticRouter(dataRoutes);
+
 ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <RouterProvider
+      router={router}
+      fallbackElement={<div>loading...</div>}
+    />
   </React.StrictMode>,
 );
